@@ -1,0 +1,117 @@
+host: "54.226.199.101"
+port: 8081
+use_https: false
+base_path: "/jumpthequeue/services/rest"
+users: 5
+goose_log: "goose1.log"
+user_creation_rate: "1"
+run_time: "60"
+report_file: "report1.html"
+request_log: "request1.log"
+request_body: true
+error_log: "error1.log"
+debug_log: "debug1.log"
+max_request_second: 14
+no_reset_metrics: true
+
+benchmarks:
+  -
+    name: "Cloud benchmark consumption at constant request rate"
+    request_groups:
+      -
+        requests:
+          -
+            method: POST
+            path: "/visitormanagement/v1/visitor/search/"
+            content_type: "application/json"
+            body: |
+              {
+                "pageable": {
+                  "pageSize": 10,
+                  "pageNumber": 0
+                }
+              }
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/1/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/2/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/3/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/4/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/1/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/6/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/5/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/7/"
+
+          -
+            method: GET
+            path: "/visitormanagement/v1/visitor/8/"
+      -
+        requests:
+          -
+            method: POST
+            path: "/queuemanagement/v1/queue/search/"
+            content_type: "application/json"
+            body: |
+              {
+                "pageable": {
+                  "pageSize": 10,
+                  "pageNumber": 0
+                }
+              }
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+          
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+          
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+
+          -
+            method: GET
+            path: "/queuemanagement/v1/queue/1/"
+          
