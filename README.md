@@ -1,3 +1,3 @@
 # test project repo
 
-triggered version 1.5
+triggered version v1.5
