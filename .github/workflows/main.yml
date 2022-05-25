@@ -12,3 +12,9 @@ jobs:
         id: benchmark
         env:
           config: config.yaml
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: /app/report1.html
+            
